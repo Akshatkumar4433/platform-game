@@ -9,8 +9,11 @@ let simpleLevelPlan = `
 .....###############..
 ......................`;
 
-/**Now we define the level class. The descriptions must be written 
- * this way
+/** Level class takes the plan above, and turns it into a collection of
+ *  Actors, leaving static blocks in the this.rows property. Actors
+ *  are things that can move, while static blocks (eg. walls and empty space)
+ *  just exist. 
+ * 
  */
 class Level{
     constructor(plan){
@@ -36,7 +39,7 @@ class Level{
  */
 
  /** Several things start expanding from class Level
-  * We no wknow that there is an object levelchars, that probably holds charactere
+  * We now know that there is an object levelchars, that probably maps characters to something like 'type'
   * Also, from the fact that type is being pushed into this.startActors, we know that 
   * type is either a string or an actor.
   * Also, we discover that actors have a create method, that takes yet another Vec class
